@@ -12,7 +12,10 @@ document.addEventListener("DOMContentLoaded", () => {
 })
 
 function changeTheme() {
+
     changePageTheme(currentTheme, currentTheme);
+
+    //set the listener to change theme button
     const changeThemeButton = document.querySelector("#theme_change_button");
     const oldtheme = currentTheme;
     changeThemeButton.addEventListener("click"  , () => {
