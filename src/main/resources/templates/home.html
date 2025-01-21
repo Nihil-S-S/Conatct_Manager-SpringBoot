@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en" th:replace="~{base :: parent(~{::#content},~{::#title},~{::script})}">
+<head>
+    <meta charset="UTF-8">
+    <title id = "title">Home</title>
+</head>
+<body>
+<div id="content">
+    <h1 data-th-text="${name}">Welcome to Home page</h1>
+    <p>This is a simple contact manager application</p>
+</div>
+</body>
+<script>
+    console.log("home");
+</script>
+</html>
