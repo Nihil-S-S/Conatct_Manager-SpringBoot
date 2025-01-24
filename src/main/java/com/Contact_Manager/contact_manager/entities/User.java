@@ -1,5 +1,5 @@
 package com.Contact_Manager.contact_manager.entities;
-
+import com.Contact_Manager.contact_manager.entities.Providers;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
@@ -24,7 +24,7 @@ public class User {
     @Column(name = "user_name",nullable = false)
     private String name;
 
-    @Column(unique = true,nullable = false)
+    @Column(nullable = false)
     private String email;
 
     private String password;
@@ -35,6 +35,7 @@ public class User {
     private boolean enabled = false;
     private boolean emailVerified = false;
     private boolean phoneVerified = false;
+
 
     private Providers provider = Providers.SELF;
     private String providerId;
