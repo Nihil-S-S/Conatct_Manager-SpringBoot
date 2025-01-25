@@ -7,10 +7,12 @@ import com.Contact_Manager.contact_manager.Services.UserServices;
 import com.Contact_Manager.contact_manager.entities.User;
 import com.Contact_Manager.contact_manager.forms.UserForm;
 import jakarta.servlet.http.HttpSession;
+import jakarta.validation.Valid;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.Optional;
@@ -58,13 +60,13 @@ public class Pagecontroller {
 
 //    processing register
     @PostMapping(value = "/do-register")
-    public String processRegister(@ModelAttribute UserForm userForm, HttpSession session){
+    public String processRegister(@Valid @ModelAttribute UserForm userForm, BindingResult bindingResult, HttpSession session){
 
-        boolean existingUser = userServices.isUserExistByEmailId(userForm.getEmail());
-        if (existingUser) {
-            // Handle duplicate email scenario, return error or show message
-            return "redirect:/register?error=emailExists";
+        if(bindingResult.hasErrors()){
+            return "register";
         }
+
+
         User user = new User();
         user.setName(userForm.getName());
         user.setEmail(userForm.getEmail());
