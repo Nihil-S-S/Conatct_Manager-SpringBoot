@@ -1,7 +1,9 @@
 package com.Contact_Manager.contact_manager.Controllers;
 
+import com.Contact_Manager.contact_manager.Helpers.Message;
+import com.Contact_Manager.contact_manager.Helpers.messageEnum;
 import com.Contact_Manager.contact_manager.Services.UserServices;
-import com.Contact_Manager.contact_manager.entities.Contact;
+
 import com.Contact_Manager.contact_manager.entities.User;
 import com.Contact_Manager.contact_manager.forms.UserForm;
 import jakarta.servlet.http.HttpSession;
@@ -77,7 +79,9 @@ public class Pagecontroller {
 
         System.out.println("user saved :");
 
-        session.setAttribute("message","Registration Successfull");
+       Message message = Message.builder().content("Registration ").type(messageEnum.green).build();
+
+        session.setAttribute("message",message);
         return "redirect:/register";
 
     }
