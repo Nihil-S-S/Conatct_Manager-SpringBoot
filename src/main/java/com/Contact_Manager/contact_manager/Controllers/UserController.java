@@ -10,13 +10,14 @@ public class UserController {
 
     @GetMapping("/dashboard")
     public String userDashboard(){
-        return "user/dashboard";
+        return "User/dashboard";
     }
 
     @GetMapping("/profile")
     public String userProfile(){
-        return "user/profile";
+        return "User/profile";
     }
+
 
 
 }

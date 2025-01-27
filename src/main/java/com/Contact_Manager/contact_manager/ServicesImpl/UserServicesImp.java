@@ -10,6 +10,7 @@ import lombok.Data;
 import lombok.RequiredArgsConstructor;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 import java.util.List;
@@ -18,15 +19,15 @@ import java.util.UUID;
 
 import static org.springframework.beans.BeanUtils.copyProperties;
 
-@Data
-@RequiredArgsConstructor
-@AllArgsConstructor
 @Service
 public class UserServicesImp implements UserServices {
 
 
-    private final UserRepo userRepo;
-    private final PasswordEncoder passwordEncoder;
+    @Autowired
+    private UserRepo userRepo;
+
+    @Autowired
+    private PasswordEncoder passwordEncoder;
 
     private Logger logger = LoggerFactory.getLogger(this.getClass());
 

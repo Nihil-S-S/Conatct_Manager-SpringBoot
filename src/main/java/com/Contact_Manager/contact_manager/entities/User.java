@@ -1,10 +1,7 @@
 package com.Contact_Manager.contact_manager.entities;
 import com.Contact_Manager.contact_manager.entities.Providers;
 import jakarta.persistence.*;
-import lombok.AllArgsConstructor;
-import lombok.Builder;
-import lombok.Data;
-import lombok.NoArgsConstructor;
+import lombok.*;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
@@ -38,6 +35,8 @@ public class User implements UserDetails {
     private String profilePic;
     private String phoneNumber;
 
+    @Getter(value = AccessLevel.NONE)
+    // information
     private boolean enabled = true;
     private boolean emailVerified = false;
     private boolean phoneVerified = false;
@@ -56,7 +55,7 @@ public class User implements UserDetails {
     public Collection<? extends GrantedAuthority> getAuthorities() {
         Collection<SimpleGrantedAuthority> roles = roleList.stream().map(role->new SimpleGrantedAuthority(role))
                 .collect(Collectors.toList());
-        return null;
+        return roles;
     }
 
     @Override
@@ -77,5 +76,15 @@ public class User implements UserDetails {
     @Override
     public boolean isCredentialsNonExpired() {
         return true;
+    }
+
+    @Override
+    public boolean isEnabled() {
+        return this.enabled;
+    }
+
+    @Override
+    public String getPassword() {
+        return this.password;
     }
 }
