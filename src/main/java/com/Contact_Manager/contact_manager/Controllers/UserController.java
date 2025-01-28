@@ -9,13 +9,14 @@ import org.springframework.web.bind.annotation.RequestMapping;
 public class UserController {
 
     @GetMapping("/dashboard")
-    public String userDashboard(){
-        return "User/dashboard";
+    public String userDashboard() {
+        System.out.println("User dashboard");
+        return "user/dashboard";
     }
 
     @GetMapping("/profile")
     public String userProfile(){
-        return "User/profile";
+        return "user/profile";
     }
 
 

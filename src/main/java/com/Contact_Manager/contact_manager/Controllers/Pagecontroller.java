@@ -31,6 +31,10 @@ public class Pagecontroller {
         return "home";
     }
 
+    @GetMapping("/")
+    public String index() {
+        return "redirect:/home";
+    }
     @RequestMapping("/about")
     public String aboutPage(){
         return "about";
@@ -46,8 +50,8 @@ public class Pagecontroller {
         return "contact";
     }
     @GetMapping("/login")
-    public String loginPage(){
-        return "login";
+    public String login() {
+        return new String("login");
     }
 
     @GetMapping("/register")
