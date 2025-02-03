@@ -1,0 +1,20 @@
+[33m1ccd35f[m[33m ([m[1;36mHEAD[m[33m, [m[1;31morigin/main[m[33m, [m[1;31morigin/HEAD[m[33m, [m[1;32mmain[m[33m)[m google oauth setup
+[33m76a8e2d[m login page setup
+[33m57166c2[m security for user pages
+[33m09404bd[m spring security , routes configuration started
+[33m51b138d[m spring security hard coded
+[33mafa5e2b[m validation message of Userform
+[33m430719d[m message color and removing after refresh done
+[33m71ac9e2[m small change
+[33m74573ae[m small change
+[33m59de2c8[m made some changes as node modules shown some error
+[33m997cdde[m pom error (lombok)
+[33m33ad918[m form related entities
+[33m4024487[m form related entities
+[33m5a383e8[m form related entities
+[33m82d0d3d[m form related entities
+[33m8037c0a[m form created and bug for theme page fixed completely
+[33m33fb2c7[m theme change button bug fix
+[33m26fd8da[m Initial commit
+[33mfc3a995[m Initial commit
+[33m0f74921[m Initial commit

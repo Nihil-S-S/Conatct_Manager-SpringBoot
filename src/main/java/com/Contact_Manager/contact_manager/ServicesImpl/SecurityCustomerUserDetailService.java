@@ -16,6 +16,7 @@ import java.util.List;
 @Service
 public class SecurityCustomerUserDetailService implements UserDetailsService {
 
+    @Autowired
     private UserRepo userRepo;
 
     public SecurityCustomerUserDetailService(UserRepo userRepo) {
